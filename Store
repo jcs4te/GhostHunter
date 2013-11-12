@@ -1,0 +1,28 @@
+package edu.virginia.cs2110.ghosthunter;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class Store extends Activity{
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.store);
+        TextView money = (TextView) findViewById(R.id.funds);
+        // money.setText("You have " + wealth + "points");
+        
+        Button bomb = (Button) findViewById(R.id.Bomb); 
+        bomb.setOnClickListener(new View.OnClickListener() {
+     
+			@Override
+			public void onClick(View view) {
+				if (h.getWealth < bomb.getCost()); 
+				
+			}
+        }
+    }
+}
