@@ -1,0 +1,59 @@
+package edu.virginia.cs2110.ghosthunter;
+
+public class Hunter {
+	protected String username;
+	protected String email;
+	protected String password; 
+	protected int level;
+	public int wealth;
+	//protected ArrayList<Upgrades> tools;
+	protected int health; 
+	protected int maxhealth; 
+	
+	public Hunter(String name, String mail,String psswrd) {
+		this.username = name; 
+		this.email = mail;
+		this.password = psswrd;
+		this.level = 1; 
+		this.wealth = 0;
+		this.health = 100; 
+		this.maxhealth = 100; 
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public int getWealth() {
+		return wealth;
+	}
+
+	public int getHealth() {
+		return health;
+	}
+
+	public String getUsername() { 
+		return this.username; 
+	}
+	
+	public void changeHealth(int x) { 
+		this.health = this.health + x;
+		if (this.health > 100) 
+			this.health = 100; 
+
+	}
+	
+	public void changeWealth(int x) {
+		this.wealth = this.wealth + x; 
+	}
+	
+
+}
