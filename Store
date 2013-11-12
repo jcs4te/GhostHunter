@@ -7,12 +7,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Store extends Activity{
+	Hunter hunter = new Hunter("example", "delete", "later"); 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.store);
-        TextView money = (TextView) findViewById(R.id.funds);
+        //TextView money = (TextView) findViewById(R.id.funds);
         // money.setText("You have " + wealth + "points");
         
         Button bomb = (Button) findViewById(R.id.Bomb); 
@@ -20,9 +21,15 @@ public class Store extends Activity{
      
 			@Override
 			public void onClick(View view) {
-				if (h.getWealth < bomb.getCost()); 
+				if (hunter.getWealth() < 20) {
+					Toast toast = Toast.makeText(getApplicationContext(), "Insufficent Funds!", Toast.LENGTH_LONG); 
+				} else {
+					Bomb bomb = new Bomb(); 
+					hunter.getInventory().add(bomb); 
+				}
 				
 			}
-        }
+        });
+    
     }
 }
