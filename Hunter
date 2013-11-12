@@ -1,12 +1,14 @@
 package edu.virginia.cs2110.ghosthunter;
 
+import java.util.ArrayList;
+
 public class Hunter {
 	protected String username;
 	protected String email;
 	protected String password; 
 	protected int level;
 	public int wealth;
-	//protected ArrayList<Upgrades> tools;
+	protected ArrayList<Item> inventory;
 	protected int health; 
 	protected int maxhealth; 
 	
@@ -16,6 +18,7 @@ public class Hunter {
 		this.password = psswrd;
 		this.level = 1; 
 		this.wealth = 0;
+		this.inventory = new ArrayList<Item>(); 
 		this.health = 100; 
 		this.maxhealth = 100; 
 	}
@@ -43,7 +46,9 @@ public class Hunter {
 	public String getUsername() { 
 		return this.username; 
 	}
-	
+	public ArrayList<Item> getInventory() {
+		return this.inventory; 
+	}
 	public void changeHealth(int x) { 
 		this.health = this.health + x;
 		if (this.health > 100) 
@@ -54,6 +59,7 @@ public class Hunter {
 	public void changeWealth(int x) {
 		this.wealth = this.wealth + x; 
 	}
+	
 	
 
 }
