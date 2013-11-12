@@ -45,7 +45,7 @@ public class SignIn extends Activity{
     			// incorrect dialog box. reset 
     		} 
     		else {
-    			Hunter newHunter = new Hunter(user, eml, pass1);
+    			Hunter hunter = new Hunter(user, eml, pass1);
     			//allPlayers.addPlayer(newHunter); 
     		}
     		Intent main = new Intent(SignIn.this, MainActivity.class);
