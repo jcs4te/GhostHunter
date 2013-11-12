@@ -1,0 +1,56 @@
+package edu.virginia.cs2110.ghosthunter;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import edu.virginia.cs2110.ghosthunter.R;
+
+
+public class SignIn extends Activity{
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.signin);
+    
+    
+    Button enter = (Button) findViewById(R.id.enter1); 
+    final EditText usrname = (EditText) findViewById(R.id.thisuser);
+    final EditText pw = (EditText) findViewById(R.id.thispassword); 
+    enter.setOnClickListener(new View.OnClickListener() {
+    	@Override
+    	public void onClick(View view) {
+    		/* 
+    		 * if (allPlayers.containsKey(usrname) 
+    		 */
+    		Intent main = new Intent(SignIn.this, MainActivity.class);
+    		startActivity(main);
+    		}
+    });
+    
+    Button create = (Button) findViewById(R.id.create); 
+    final EditText newusrname = (EditText) findViewById(R.id.newUsername);
+    final EditText pw1 = (EditText) findViewById(R.id.newPassword); 
+    final EditText pw2 = (EditText) findViewById(R.id.confirmPassword); 
+    final EditText email = (EditText) findViewById(R.id.newEmail); 
+    create.setOnClickListener(new View.OnClickListener() {
+    	@Override
+    	public void onClick(View view) {
+    		String user = newusrname.getText().toString(); 
+    		String eml = email.getText().toString(); 
+    		String pass1 = pw1.getText().toString(); 
+    		String pass2 = pw2.getText().toString(); 
+    		if (!(pass1.equals(pass2))) {
+    			// incorrect dialog box. reset 
+    		} 
+    		else {
+    			Hunter newHunter = new Hunter(user, eml, pass1);
+    			//allPlayers.addPlayer(newHunter); 
+    		}
+    		Intent main = new Intent(SignIn.this, MainActivity.class);
+    		startActivity(main);
+    		}
+    });
+}
+}
